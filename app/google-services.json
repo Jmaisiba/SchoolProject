@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "242383612102",
+    "project_id": "score-ff1c9",
+    "storage_bucket": "score-ff1c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242383612102:android:c3f82f1dd625abaa3f8fc7",
+        "android_client_info": {
+          "package_name": "com.example.creditwise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242383612102-2bqnaqld4gcbn67ev6q8097611snq60s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEWpQH7N9ZR30bbfflu7UuWWsBLQ4GBUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242383612102-2bqnaqld4gcbn67ev6q8097611snq60s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
