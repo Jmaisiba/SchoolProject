@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-public class RegisterActivity extends AppCompatActivity {
+public class    RegisterActivity extends AppCompatActivity {
 
     EditText mFirstNameEt,mLastNameEt,mEmailEt,mPasswordEt;
     TextView mHaveAccountTv;
@@ -32,6 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     private FirebaseAuth mAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = mAuth.getCurrentUser();
+                             user = mAuth.getCurrentUser();
 
                             //get uid and email
                             String email= user.getEmail();

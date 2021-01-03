@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -13,12 +14,13 @@ import com.google.firebase.auth.FirebaseUser;
 public class DashboardActivity extends AppCompatActivity {
 
 
-    ImageView imageViewLogout, infoCardView, tipsCardView, scoreCardView, chatCardView;
+    LinearLayout socialCard,imageViewLogout, infoCardView, tipsCardView, scoreCardView, chatCardView;
 
 
 
 
     FirebaseAuth firebaseAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,10 @@ public class DashboardActivity extends AppCompatActivity {
         tipsCardView = findViewById(R.id.tipsCard);
         scoreCardView = findViewById(R.id.scoreCard);
         chatCardView = findViewById(R.id.chatCard);
+        socialCard= findViewById(R.id.socials);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
 
         imageViewLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,9 +78,14 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(DashboardActivity.this,ChatActivity.class));
             }
         });
+        socialCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, PostActivity.class));
+            }
+        });
 
 
-        firebaseAuth = FirebaseAuth.getInstance();
 
 
     }
@@ -82,7 +93,7 @@ public class DashboardActivity extends AppCompatActivity {
 
 
     private void checkUserStatus() {
-        FirebaseUser user = firebaseAuth.getCurrentUser();
+        user = firebaseAuth.getCurrentUser();
         if (user!=null){
             //user remains signed in
 

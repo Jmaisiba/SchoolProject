@@ -1,5 +1,6 @@
 package com.example.creditwise;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -13,6 +14,16 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+
+        //setting title
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Credit Score Results");
+        //back button
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+
+
         String result = "ERROR";
         String paragraph = "-1";
         if(User.points >= 0 && User.points <170) {
@@ -62,5 +73,10 @@ public class ResultActivity extends AppCompatActivity {
         TextView points = findViewById(R.id.resultView);
         points.setText("" + User.points);
         User.points = 0;
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();//goes to previous activity
+        return super.onSupportNavigateUp();
     }
 }
